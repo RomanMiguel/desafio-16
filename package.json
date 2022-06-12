@@ -9,12 +9,16 @@
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node ./src/index.js",
     "cluster": "nodemon --experimental-modules --es-module-specifier-resolution=node ./src/index.cluster.js 8081",
     "pmfork": "pm2 start ./src/index.js --name='serverfork' --watch -- 8084",
-    "pmcluster": "pm2 start ./src/index.js --name='servercluster' --watch -i 4 -- 8085"
+    "pmcluster": "pm2 start ./src/index.js --name='servercluster' --watch -i 4 -- 8085",
+    "profProcess": "node --prof ./src/index.js",
+    "testAutocannon": "node ./src/benchmark.js",
+    "startOx": "0x ./src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autocannon": "^7.9.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

@@ -2,7 +2,7 @@ import express from "express"
 import session from "express-session";
 import cors from "cors"
 import compression from "compression";
-import { routerProducts, routerCart, routerUser, routerInfo, routerRandom } from "./routers";
+import { routerProducts, routerCart, routerUser, routerInfo } from "./routers";
 import logger from "./utils/logger";
 import "./config/db"
 
@@ -27,7 +27,6 @@ app.use ( '/api/productos'  , routerProducts );
 app.use ( '/api/carrito'    , routerCart );
 app.use ( '/api/user'       , routerUser );
 app.use ( '/api/info'       , routerInfo );
-app.use ( '/api/random'     , routerRandom );
 
 const PORT = process.argv[2] || 8080;
 
